@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Cinema from "./pages/Cinema/container";
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import Movie from "./pages/Cinema/components/Movie/Movie";
+import CreateRoom from "./pages/Cinema/components/CreateRoom/CreateRoom";
+import CreateMovie from "./pages/Cinema/components/CreateMovie/CreateMovie";
+import Seat from "./pages/Cinema/components/Seat/Seat";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Cinema />} />
+        <Route path="/:id" element={<Movie />} />
+
+        <Route path="/create-room" element={<CreateRoom />} />
+        <Route path="/create-movie/:id" element={<CreateMovie />} />
+        <Route path="/seat/:id" element={<Seat />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

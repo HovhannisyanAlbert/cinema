@@ -1,0 +1,113 @@
+.cinemaRoomWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.room {
+  background: white;
+  color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkWrapper {
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #ff5f6d;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.name:hover {
+  color: #ff3d5a;
+}
+
+.editInput {
+  width: calc(100% - 20px);
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.buttonContainer,
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.save,
+.cancel,
+.edit,
+.delete {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save {
+  background-color: #4caf50;
+  color: white;
+}
+
+.save:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+.edit {
+  background-color: #ff9800;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #fb8c00;
+  transform: scale(1.05);
+}
+
+.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
