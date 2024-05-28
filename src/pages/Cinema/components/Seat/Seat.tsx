@@ -1,5 +1,3 @@
-// Seat.jsx
-
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -22,7 +20,7 @@ interface iSeat {
 const Seat: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = usedispatch();
-  const { seats, movies } = useSelector((state: RootState) => state.cinema);
+  const { seats } = useSelector((state: RootState) => state.cinema);
   const [selectedSeats, setSelectedSeats] = useState<iSeat[]>([]);
 
   useEffect(() => {
@@ -79,7 +77,11 @@ const Seat: React.FC = () => {
       dispatch(cinemaSeat(response.data));
       setSelectedSeats([]);
     } catch (error: any) {
-      toast.error(error.error);
+      if (error.error) {
+        toast.error(error.error);
+      } else {
+        toast.error(error.response.data.error);
+      }
     }
   };
 

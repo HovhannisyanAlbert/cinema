@@ -23,7 +23,6 @@ export function getImagePath(image: string) {
 }
 
 export function getDateTimeDetails(convertDate: string) {
-  console.log(convertDate);
   let date = new Date(convertDate);
 
   let monthNames = [
